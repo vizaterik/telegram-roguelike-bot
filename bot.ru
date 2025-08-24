@@ -1,13 +1,17 @@
 import telebot
 import json
 import os
+from dotenv import load_dotenv
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton, WebAppInfo
 
-# ⚠️ ВСТАВЬ сюда свой токен от BotFather
-TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
+# Загружаем переменные из .env
+load_dotenv()
 
-# ⚠️ ВСТАВЬ сюда ссылку на твою игру (GitHub Pages)
-WEBAPP_URL = "https://YOUR-NAME.github.io/telegram-roguelike/"
+# Берём токен из переменной окружения BOT_TOKEN
+TOKEN = os.getenv("BOT_TOKEN")
+
+# ⚠️ ВСТАВЬ сюда ссылку на свою HTML-игру (GitHub Pages)
+WEBAPP_URL = "https://vizaterik.github.io/telegram-roguelike/"
 
 bot = telebot.TeleBot(TOKEN)
 
